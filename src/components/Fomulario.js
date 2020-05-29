@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import Error from "./Error";
 
 const Formulario = ({ handleClickSaldo }) => {
 
-  const [saldoInicial, setSaldoInicial] = useState(0);
+  const [saldoInicial, setSaldoInicial] = useState("");
 
   const [error, setError] = useState(false);
 
@@ -14,7 +14,6 @@ const Formulario = ({ handleClickSaldo }) => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-
     if (saldoInicial > 0) {
       handleClickSaldo(saldoInicial);
       setError(false);
@@ -27,14 +26,14 @@ const Formulario = ({ handleClickSaldo }) => {
     <div className="row text-center">
       <div className="col p-0">
         <form className="p-4 mt-5 bg-light">
-          {error !== false && <Error />}
+          {error !== false && <Error mensaje="El saldo inicial no puede ser menor a 0"/>}
           <div className="form-group">
             <label>Ingresa un saldo inicial</label>
             <input
               type="text"
               className="form-control"
               value={saldoInicial}
-              placeholder="ingresa un saldo inicial"
+              placeholder="Ej: 5000"
               onChange={handleSaldoInicial}
             />
           </div>

@@ -5,13 +5,17 @@ import ControlSaldo from './ControlSaldo';
 const Movimientos = ({ saldo, gastos, restante }) => {
   return (
     <>
-      <div>
-      
+  
         {gastos.map((gasto) => (
-          <Gasto key={gasto.id} gasto={gasto} />
+          <div key={gasto.id}>
+          <Gasto gasto={gasto} />
+          <hr/>
+          </div>
         ))}
          <ControlSaldo saldo={saldo} restante={restante}/>
-      </div>
+         
+  
+     
     </>
   );
 };
