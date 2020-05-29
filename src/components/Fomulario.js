@@ -2,11 +2,14 @@ import React, { Fragment, useState } from "react";
 import Error from "./Error";
 
 const Formulario = ({ handleClickSaldo }) => {
-  const [saldoInicial, setSaldoInicial] = useState("0");
+
+  const [saldoInicial, setSaldoInicial] = useState(0);
+
   const [error, setError] = useState(false);
 
   const handleSaldoInicial = (e) => {
     setSaldoInicial(e.target.value);
+    
   };
 
   const onSubmitForm = (e) => {
